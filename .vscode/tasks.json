@@ -1,0 +1,72 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "log shell",
+            "type": "shell",
+            "command": "env",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceRoot}",
+            }
+        },
+        {
+            "label": "mix test line",
+            "type": "shell",
+            "command": "mix",
+            "args": [
+                "test",
+                "--color",
+                "--trace",
+                "${relativeFile}:${lineNumber}"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}",
+                "requireFiles": [
+                    "test/**/test_helper.exs",
+                    "test/**/*_test.exs"
+                ],
+            },
+            "problemMatcher": "$mixTestFailure"
+        },
+        {
+            "label": "mix test file",
+            "type": "shell",
+            "command": "mix",
+            "args": [
+                "test",
+                "--color",
+                "--trace",
+                "${relativeFile}"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}",
+                "requireFiles": [
+                    "test/**/test_helper.exs",
+                    "test/**/*_test.exs"
+                ],
+            },
+            "problemMatcher": "$mixTestFailure"
+        },
+        {
+            "label": "mix test",
+            "type": "shell",
+            "command": "mix",
+            "args": [
+                "test",
+                "--color",
+                "--trace",
+                "--max-failures",
+                "1"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}",
+                "requireFiles": [
+                    "test/**/test_helper.exs",
+                    "test/**/*_test.exs"
+                ],
+            },
+            "problemMatcher": "$mixTestFailure"
+        }
+    ]
+}
