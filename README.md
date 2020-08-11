@@ -1,6 +1,6 @@
-# GoogleCloudTracePlug
+# Google Cloud Trace Plug
 
-**TODO: Add description**
+Reads trace context from `x-cloud-trace-context` header and adds metadata to `Logger` so trace context will appear in Google Cloud Logging.
 
 ## Installation
 
